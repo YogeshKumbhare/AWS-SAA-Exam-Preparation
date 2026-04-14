@@ -429,3 +429,29 @@ Which migration method is MOST practical?
 | io2 Block Express | Largest databases | 256,000 | 4,000 MB/s |
 | st1 | Big data, logs | 500 | 500 MB/s |
 | sc1 | Cold archives | 250 | 250 MB/s |
+
+---
+
+## Global Web Sourced Questions - SAA-C03
+
+### Q-Global-1. Ensuring Data Durability Across Regions Cost-Effectively
+**Question:** A company stores its application backup data in an Amazon S3 Standard bucket in the us-east-1 region. Due to a new compliance requirement, the company must ensure these backups are also stored in the eu-west-1 region. The backups are rarely accessed but must be retrieved within 12 hours if needed for an audit. What is the MOST cost-effective way to meet these requirements?
+- A. Enable AWS Backup to automatically copy the backups to an S3 Standard bucket in eu-west-1.
+- B. Enable S3 Cross-Region Replication (CRR) to copy the backups to an S3 Glacier Flexible Retrieval bucket in eu-west-1.
+- C. Create a Lambda function to copy the objects to an S3 One Zone-IA bucket in eu-west-1.
+- D. Enable S3 Cross-Region Replication (CRR) to copy the backups to an S3 Standard-IA bucket in eu-west-1 and set a lifecycle policy to move them to Glacier Deep Archive.
+
+**Correct Answer: B**
+
+**Explanation:** S3 Cross-Region Replication allows automatic asynchronous copying of objects across buckets in different regions. Since the data in EU is rarely accessed and a retrieval time of 12 hours is acceptable, S3 Glacier Flexible Retrieval is highly cost-effective and meets the retrieval constraint (Standard retrievals take 3-5 hours, Bulk takes 5-12 hours).
+
+### Q-Global-2. Migrating File Data for Legacy Applications
+**Question:** An enterprise is migrating its on-premises infrastructure to AWS. It has numerous legacy Linux applications that require shared access to a centralized file system. These applications cannot be rewritten to use object storage APIs. Which AWS service should a Solutions Architect recommend?
+- A. Amazon S3 mapped via Storage Gateway
+- B. Amazon Elastic Block Store (EBS) Multi-Attach
+- C. Amazon Elastic File System (EFS)
+- D. Amazon FSx for Windows File Server
+
+**Correct Answer: C**
+
+**Explanation:** Amazon EFS provides simple, scalable, fully managed elastic NFS file storage for use with AWS Cloud services and on-premises resources. It is built to scale on demand to petabytes without disrupting applications, growing and shrinking automatically. It natively supports Linux applications requiring a standard file system interface.

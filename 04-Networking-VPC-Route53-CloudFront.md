@@ -443,3 +443,29 @@ Which Route 53 routing policy should the Solutions Architect use?
 | Geolocation | Data sovereignty, localization |
 | Geoproximity | Route to nearest resource with bias |
 | Multivalue | Return multiple healthy records |
+
+---
+
+## Global Web Sourced Questions - SAA-C03
+
+### Q-Global-1. Blocking Malicious IP Addresses
+**Question:** A company's web application deployed in a VPC is facing an ongoing DDoS attack from a known set of malicious IP addresses. A Solutions Architect needs to quickly block traffic from these specific IPs at the subnet level. Which action should be taken?
+- A. Update the Security Groups associated with the web tier instances to deny the malicious IPs.
+- B. Update the Network Access Control List (Network ACL) associated with the public subnet to deny the malicious IPs.
+- C. Use AWS Shield Advanced to automatically block the specified IP addresses.
+- D. Modify the Route table of the VPC to route the malicious IPs to a blackhole.
+
+**Correct Answer: B**
+
+**Explanation:** Network ACLs operate at the subnet level and support explicit DENY rules, making them the correct tool to quickly block malicious IP ranges from reaching any instances in the subnet. Security groups only support ALLOW rules, so they cannot be used to explicitly deny traffic.
+
+### Q-Global-2. Improving Global Application Availability and Performance
+**Question:** A company has a globally distributed user base that interacts with an API hosted on AWS in a single region. Users in locations geographically distant from the AWS region are reporting high latency. Which service should a Solutions Architect use to improve the global performance and availability of the API?
+- A. Amazon CloudFront
+- B. AWS Global Accelerator
+- C. Amazon Route 53 with latency-based routing
+- D. Application Load Balancer with Cross-Zone Load Balancing
+
+**Correct Answer: B**
+
+**Explanation:** AWS Global Accelerator uses the robust Amazon global network to route traffic to the optimal endpoint, bypassing public internet congestion. It provides static IP addresses that act as a fixed entry point to your application globally, reducing latency and dramatically improving performance for users across the world.

@@ -510,3 +510,29 @@ What should the Solutions Architect do?
 | Spot | Fault-tolerant, flexible workloads | Up to 90% |
 | Dedicated Hosts | Licensing, compliance requirements | Varies |
 | Savings Plans | Flexible compute commitment | Up to 72% |
+
+---
+
+## Global Web Sourced Questions - SAA-C03
+
+### Q-Global-1. Optimizing Cost for Fault-Tolerant Batch Processing
+**Question:** A company runs a nightly batch processing job on Amazon EC2 instances. The job is highly fault-tolerant, stateless, and can be interrupted and resumed without any issues. The job takes approximately 4 hours to complete each night. The company mandates that the cost of this workload must be minimized as much as possible. Which EC2 pricing option should a Solutions Architect choose?
+- A. EC2 On-Demand Instances
+- B. EC2 Dedicated Hosts
+- C. EC2 Reserved Instances
+- D. EC2 Spot Instances
+
+**Correct Answer: D**
+
+**Explanation:** Spot Instances allow you to request spare Amazon EC2 computing capacity for up to 90% off the On-Demand price. Since the batch processing job is fault-tolerant and stateless, it can handle interruptions if AWS reclaims the Spot Instances. This makes it the most cost-effective solution for this specific workload.
+
+### Q-Global-2. Enabling High-Performance Computing
+**Question:** A research team needs to deploy an application on AWS that requires high levels of inter-node communication for tightly coupled, high-performance computing (HPC) workloads. Which architectural decision should a Solutions Architect make to achieve the lowest possible network latency and highest packet per second performance?
+- A. Deploy EC2 instances in a Spread Placement Group.
+- B. Deploy EC2 instances in a Cluster Placement Group.
+- C. Deploy EC2 instances across multiple Availability Zones.
+- D. Deploy EC2 instances attached to an Auto Scaling group with a Network Load Balancer.
+
+**Correct Answer: B**
+
+**Explanation:** A Cluster Placement Group packs instances close together inside an Availability Zone. This strategy enables workloads to achieve the low latency network performance necessary for tightly coupled node-to-node communication that is typical of HPC applications.
